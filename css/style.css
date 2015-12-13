@@ -1,0 +1,71 @@
+:root {
+  background: #dedef1;
+}
+
+:target {
+  background: navy;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 1px 5px 10px 5px rgba(5,5,5,0.7);
+}
+
+.col {
+  transition: background 1s, color 0.5s, border-radius 1s, box-shadow 1s;
+}
+
+#col-c:target {
+  background: black;
+}
+
+#col-c input.btn {
+  transition: background 0.25s;
+}
+  
+#col-c:target input.btn {
+  background: navy;
+}
+
+input:not([type="submit"]) {
+  box-shadow: inset 0 2px 0 rgba(0,0,0,0.15);
+}
+
+/* :not() is good good for first/last-child margins */
+a:not(first-child) {
+  margin-left: 15px;
+}
+
+/* DropCap styling */
+#col-a > p#intro::first-letter {
+  float: left;
+  font-size: 3em;
+  color: white;
+  padding: 15px 10px 0px;
+  background-color: #384047;
+  margin: 5px 10px 0 0;
+  border-radius: 5px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: Fantasy, Cursive, serif;
+}
+
+/* demonstrates problem of floats */
+/* with flexbox, this is taken care of for you */
+@media screen and (max-width: 56.25em) {
+  .col {
+    width: 50%;
+  }
+  .col:nth-child(2n+3){
+    clear: left;
+  }
+}
+
+@media screen and (max-width: 34.375em) {
+  .col {
+    width: 100%;
+    float: none;
+    clear: none;
+  }
+}
+
+
+
